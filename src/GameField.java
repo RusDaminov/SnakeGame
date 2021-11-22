@@ -40,7 +40,7 @@ public class GameField extends JPanel implements ActionListener{
             x[i] = 48 - i*DOT_SIZE;
             y[i] = 48;
         }
-        timer = new Timer(250,this);
+        timer = new Timer(150,this);
         timer.start();
         createApple();
     }
@@ -133,23 +133,23 @@ public class GameField extends JPanel implements ActionListener{
         public void keyPressed(KeyEvent e) {
             super.keyPressed(e);
             int key = e.getKeyCode();
-            if(key == KeyEvent.VK_LEFT && !right){
+            if(key == KeyEvent.VK_A && !right){
                 left = true;
                 up = false;
                 down = false;
             }
-            if(key == KeyEvent.VK_RIGHT && !left){
+            if(key == KeyEvent.VK_D && !left){
                 right = true;
                 up = false;
                 down = false;
             }
 
-            if(key == KeyEvent.VK_UP && !down){
+            if(key == KeyEvent.VK_W && !down){
                 right = false;
                 up = true;
                 left = false;
             }
-            if(key == KeyEvent.VK_DOWN && !up){
+            if(key == KeyEvent.VK_S && !up){
                 right = false;
                 down = true;
                 left = false;
